@@ -3,45 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Eventos | Tu Nombre</title>
+    <title>Galerías de Ciclismo | Tu Nombre</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Pequeña animación para el botón principal */
-        .btn-pulse {
-            animation: pulse 2s infinite;
+        /* Estilo personalizado para la barra de desplazamiento */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #4B5563;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
         }
     </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
 
-    <div class="max-w-md w-full bg-gray-800 rounded-2xl shadow-2xl p-8 text-center border border-gray-700">
+    <div class="max-w-md w-full bg-gray-800 rounded-2xl shadow-2xl p-6 text-center border border-gray-700">
         
-        <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 mb-4">
+        <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 mb-2">
             ¡Encuentra tu foto!
         </h1>
         
-        <p class="text-gray-300 text-lg mb-8">
-            Las galerías de la última carrera ya están disponibles. Búscate y descarga tus mejores momentos en la pista.
+        <p class="text-gray-300 text-sm mb-6">
+            Selecciona el evento en el que participaste para acceder a la galería completa.
         </p>
 
-        <a href="TU_ENLACE_DE_DRIVE_AQUI" target="_blank" rel="noopener noreferrer" 
-           class="btn-pulse block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-lg mb-6 transition duration-300 shadow-lg shadow-blue-500/50">
-            📁 Ir a la Galería en Drive
-        </a>
+        <div class="max-h-72 overflow-y-auto custom-scrollbar pr-2 mb-6 space-y-4">
+            
+            <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 text-left hover:border-blue-500 transition-colors">
+                <h3 class="text-lg font-bold text-white mb-2">Travesía MTB Santander - Abril 2026</h3>
+                <a href="TU_ENLACE_DRIVE_1" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                    📁 Ver Galería
+                </a>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 text-left hover:border-blue-500 transition-colors">
+                <h3 class="text-lg font-bold text-white mb-2">Criterium Ciudad - Marzo 2026</h3>
+                <a href="TU_ENLACE_DRIVE_2" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                    📁 Ver Galería
+                </a>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 text-left hover:border-blue-500 transition-colors">
+                <h3 class="text-lg font-bold text-white mb-2">Ruta de los Páramos - Feb 2026</h3>
+                <a href="TU_ENLACE_DRIVE_3" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                    📁 Ver Galería
+                </a>
+            </div>
+            </div>
 
         <hr class="border-gray-600 mb-6">
 
-        <h2 class="text-xl font-bold mb-2">¿Te gustaron las fotos? 📸</h2>
-        <p class="text-gray-400 text-sm mb-6">
+        <h2 class="text-lg font-bold mb-2">¿Te gustaron las fotos? 📸</h2>
+        <p class="text-gray-400 text-xs mb-4">
             Mi trabajo es capturar tu esfuerzo. Si descargas tu foto, el mejor apoyo que me puedes dar es un follow. ¡Etiquétame!
         </p>
 
         <a href="https://instagram.com/TU_USUARIO_AQUI" target="_blank" rel="noopener noreferrer" 
-           class="block w-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+           class="block w-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
             📱 Sígueme en Instagram
         </a>
 
