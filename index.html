@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerías de Ciclismo | Tu Nombre</title>
+    <title>Galerías de Ciclismo | @tobishots21</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Estilo personalizado para la barra de desplazamiento */
@@ -17,52 +17,115 @@
         .custom-scrollbar::-webkit-scrollbar-track {
             background: transparent;
         }
+        
+        /* Animación suave para el modal */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
 
-    <div class="max-w-md w-full bg-gray-800 rounded-2xl shadow-2xl p-6 text-center border border-gray-700">
+    <div class="max-w-md w-full bg-gray-800 rounded-2xl shadow-2xl p-6 text-center border border-gray-700 relative">
         
-        <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 mb-2">
-            ¡Encuentra tu foto!
-        </h1>
+        <div class="flex flex-col items-center mb-4">
+            <img src="perfil.jpg" alt="Tobi Shots" class="w-24 h-24 rounded-full border-4 border-orange-500 shadow-lg mb-3 object-cover">
+                 alt="Tobi Shots" 
+                 class="w-24 h-24 rounded-full border-4 border-orange-500 shadow-lg mb-3 object-cover">
+            
+            <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+                Tobi Shots
+            </h1>
+            <p class="text-gray-400 font-medium">@tobishots21</p>
+        </div>
         
         <p class="text-gray-300 text-sm mb-6">
-            Selecciona el evento en el que participaste para acceder a la galería completa.
+            Selecciona el evento en el que participaste para buscar y descargar tus fotos.
         </p>
 
         <div class="max-h-72 overflow-y-auto custom-scrollbar pr-2 mb-6 space-y-4">
             
             <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 text-left hover:border-blue-500 transition-colors">
                 <h3 class="text-lg font-bold text-white mb-2">7ma Valida GMBMX Club 2026</h3>
-                <a href="https://drive.google.com/drive/folders/1U8CEJXnYZzH6Mt4eJzTJtWmAye8-Q0Hf?usp=sharing" target="_blank" rel="noopener noreferrer" 
-                   class="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                <button onclick="openModal('https://drive.google.com/drive/folders/1U8CEJXnYZzH6Mt4eJzTJtWmAye8-Q0Hf?usp=sharing')" 
+                   class="block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                     📁 Ver Galería
-                </a>
+                </button>
             </div>
+            
             <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 text-left hover:border-blue-500 transition-colors">
                 <h3 class="text-lg font-bold text-white mb-2">III Festival BMX Rio de Oro 2026</h3>
-                <a href="https://drive.google.com/drive/folders/1nO1xCdm0lOTsauy9A1InnVxLTcDgZPmk?usp=share_link" target="_blank" rel="noopener noreferrer" 
-                   class="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                <button onclick="openModal('https://drive.google.com/drive/folders/1nO1xCdm0lOTsauy9A1InnVxLTcDgZPmk?usp=share_link')" 
+                   class="block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                     📁 Ver Galería
-                </a>
+                </button>
             </div>
 
         </div>
 
         <hr class="border-gray-600 mb-6">
 
-        <h2 class="text-lg font-bold mb-2">¿Te gustaron las fotos? 📸</h2>
+        <h2 class="text-lg font-bold mb-2">Apoya mi trabajo 📸</h2>
         <p class="text-gray-400 text-xs mb-4">
-            Mi trabajo es capturar tu esfuerzo. Si descargas tu foto, el mejor apoyo que me puedes dar es un follow. ¡Etiquétame!
+            Si te gusta cómo capturo tu esfuerzo en la pista, el mejor apoyo que me puedes dar es seguirme y etiquetarme.
         </p>
 
         <a href="https://www.instagram.com/tobishots21?igsh=MXZwcmhkam91NTl4dw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" 
-           class="block w-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
-            📱 Sígueme en Instagram
+           class="block w-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg overflow-hidden text-ellipsis whitespace-nowrap">
+            📱 Sígueme en Instagram @tobishots21
         </a>
 
     </div>
 
+    <div id="driveModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
+        <div class="bg-gray-800 rounded-2xl p-6 max-w-sm w-full text-center border border-gray-600 shadow-2xl fade-in">
+            
+            <div class="text-4xl mb-4">🙏</div>
+            <h2 class="text-2xl font-bold text-white mb-2">¡Un pequeño favor!</h2>
+            <p class="text-gray-300 text-sm mb-6">
+                Mi trabajo es capturar tus mejores momentos. Si descargas tus fotos, <strong>no olvides etiquetarme y seguirme en @tobishots21</strong>. ¡Eso me ayuda a seguir yendo a las pistas!
+            </p>
+            
+            <div class="space-y-3">
+                <a href="https://www.instagram.com/tobishots21?igsh=MXZwcmhkam91NTl4dw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"
+                   class="block w-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    📱 Ir a Instagram
+                </a>
+                
+                <a id="continueBtn" href="#" target="_blank" rel="noopener noreferrer" onclick="closeModal()"
+                   class="block w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 border border-gray-600">
+                    📁 Continuar a Drive
+                </a>
+                
+                <button onclick="closeModal()" class="mt-4 text-gray-500 hover:text-gray-300 text-sm underline">
+                    Volver atrás
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir el modal y asignar el link correcto de Drive
+        function openModal(driveUrl) {
+            const modal = document.getElementById('driveModal');
+            const continueBtn = document.getElementById('continueBtn');
+            
+            // Asigna la url de drive al botón de continuar
+            continueBtn.href = driveUrl;
+            
+            // Muestra el modal quitando la clase 'hidden'
+            modal.classList.remove('hidden');
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            const modal = document.getElementById('driveModal');
+            modal.classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
